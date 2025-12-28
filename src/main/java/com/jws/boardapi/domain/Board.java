@@ -6,7 +6,7 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "BOARD")
+@Table(name = "`BOARD`")
 @Getter
 @Builder
 @AllArgsConstructor
@@ -21,7 +21,7 @@ public class Board {
   private String title;
 
   @Lob // longtext 매핑을 위해 추가
-  @Column(name = "CONTENT", nullable = false)
+  @Column(name = "CONTENT", nullable = false, columnDefinition = "LONGTEXT")
   private String content;
 
   @Column(name = "AUTHOR", length = 20, nullable = false)

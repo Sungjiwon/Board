@@ -12,11 +12,10 @@ spring:
   # 여기부터 추가하세요!
   jpa:
     hibernate:
-      # 직접 테이블을 만드셨다면 validate, JPA가 만들게 하려면 update
       ddl-auto: validate
-    show-sql: true        # 실행되는 SQL을 콘솔에 출력
+    show-sql: true
     properties:
       hibernate:
-        format_sql: true  # SQL을 예쁘게 정렬
-        # MySQL 8 버전을 사용한다면 아래 방언을 설정하는 게 좋습니다.
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+        naming:
+          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
